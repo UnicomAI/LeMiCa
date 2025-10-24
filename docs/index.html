@@ -1,156 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation">
-  <meta name="keywords" content="LeMiCa, Diffusion, Video Generation, Acceleration, Caching, AI">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LeMiCa: Lexicographic Minimax Path Caching</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" />
+  <style>
+    body {
+      font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(135deg, #1b3b6f, #2b74c0);
+      color: white;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    header h2 {
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin: 0.3rem 0 0.8rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .authors {
+      margin-top: 0.8rem;
+      font-size: 0.95rem;
+      color: #e0e0e0;
+    }
+    .btns a {
+      display: inline-block;
+      background: #2b74c0;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      margin: 0.3rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .btns a:hover {
+      background: #163b6f;
+    }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <!-- Bulma + Icons -->
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.png">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
+    main {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 2rem 1.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h3 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 1rem 0;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      padding: 2rem 0 2rem;
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <h1>LeMiCa</h1>
+    <h2>Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation</h2>
+    <div class="authors">Author Names · Institution (2025)</div>
+    <div class="btns">
+      <a href="#">[Paper PDF]</a>
+      <a href="#">[Code]</a>
+      <a href="#">[Video Results]</a>
+    </div>
+  </header>
 
-<!-- Navigation Bar -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://yourname.github.io/LeMiCa/">
-      <strong>LeMiCa</strong>
-    </a>
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-</nav>
+  <main>
+    <section id="abstract">
+      <h3>Abstract</h3>
+      <p>
+        We present <b>LeMiCa</b>, a training-free and efficient acceleration framework for diffusion-based video generation. 
+        While existing caching strategies primarily focus on reducing local heuristic errors, they often overlook the accumulation 
+        of global errors, leading to noticeable content degradation between accelerated and original videos. To address this issue, 
+        we formulate cache scheduling as a directed graph with error-weighted edges and introduce a 
+        <b>Lexicographic Minimax Path Optimization</b> strategy that explicitly bounds the worst-case path error. 
+        This approach substantially improves the consistency of global content and style across generated frames. 
+        Extensive experiments on multiple text-to-video benchmarks demonstrate that LeMiCa delivers dual improvements 
+        in both inference speed and generation quality. Notably, our method achieves a 2.9× speedup on the Latte model 
+        and reaches an LPIPS score of 0.05 on Open-Sora, outperforming prior caching techniques. 
+        These gains come with minimal perceptual quality degradation, making LeMiCa a robust and generalizable paradigm 
+        for accelerating diffusion-based video generation.
+      </p>
+    </section>
 
-<!-- Title Section -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation
-          </h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Huanlin Gao<sup>1,2*</sup>, Ping Chen<sup>1,2*</sup>, Fuyuan Shi<sup>1,2</sup>, Chao Tan<sup>1,2</sup>, Zhaoxiang Liu<sup>1,2</sup>, Fang Zhao<sup>1,2†</sup>, Kai Wang<sup>1,2</sup>, Shiguo Lian<sup>1,2</sup></span>
-          </div>
-          <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>1</sup>Data Science & AI Research Institute, China Unicom</span><br>
-            <span class="author-block"><sup>2</sup>Unicom Data Intelligence, China Unicom</span><br>
-            <span class="author-block">(* equal contribution · † corresponding author)</span>
-          </div>
-
-          <!-- Buttons -->
-          <div class="publication-links" style="margin-top: 1rem;">
-            <a href="#" class="button is-rounded is-dark"><i class="fas fa-file-pdf"></i>&nbsp; Paper</a>
-            <a href="https://github.com/yourname/LeMiCa" class="button is-rounded is-dark"><i class="fab fa-github"></i>&nbsp; Code</a>
-            <a href="#" class="button is-rounded is-dark"><i class="fab fa-youtube"></i>&nbsp; Video</a>
-          </div>
-        </div>
+    <section id="overview">
+      <h3>Overview</h3>
+      <div style="text-align:center;">
+        <img src="./imgs/1_overview.png" alt="LeMiCa overview figure">
+        <p style="font-size:0.85rem; color:#555;">Figure: Overview of the LeMiCa framework.</p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Teaser Image -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <img src="./imgs/1_overview.pdf" alt="LeMiCa Overview" style="max-width:90%; border-radius:10px;">
-      <h2 class="subtitle has-text-centered" style="margin-top:1rem;">
-        <b>LeMiCa</b> optimizes diffusion video generation via lexicographic minimax path caching.
-      </h2>
-    </div>
-  </div>
-</section>
+    <section id="bibtex">
+      <h3>BibTeX</h3>
+<pre>
+@article{LeMiCa2025,
+  title={LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation},
+  author={Your Name and Others},
+  year={2025},
+  journal={arXiv preprint arXiv:2501.xxxxx}
+}
+</pre>
+    </section>
+  </main>
 
-<!-- Abstract -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We present <b>LeMiCa</b>, a training-free and efficient acceleration framework for diffusion-based video generation. While existing caching strategies primarily focus on reducing local heuristic errors, they often overlook the accumulation of global errors, leading to noticeable content degradation between accelerated and original videos.
-          </p>
-          <p>
-            To address this issue, we formulate cache scheduling as a directed graph with error-weighted edges and introduce a <b>Lexicographic Minimax Path Optimization</b> strategy that explicitly bounds the worst-case path error. This approach substantially improves the consistency of global content and style across generated frames.
-          </p>
-          <p>
-            Extensive experiments demonstrate that <b>LeMiCa</b> delivers dual improvements in both inference speed and generation quality, achieving up to <b>2.9×</b> speedup on the Latte model and an <b>LPIPS score of 0.05</b> on Open-Sora, outperforming prior caching techniques.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Video Section -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Demo Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/XXXXXXXXXXX?rel=0&showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BibTeX -->
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{gao2025lemica,
-  title   = {LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation},
-  author  = {Huanlin Gao and Ping Chen and Fuyuan Shi and Chao Tan and Zhaoxiang Liu and Fang Zhao and Kai Wang and Shiguo Lian},
-  year    = {2025},
-  journal = {arXiv preprint arXiv:xxxx.xxxxx},
-}</code></pre>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link" href="#"><i class="fas fa-file-pdf"></i></a>
-      <a class="icon-link" href="https://github.com/yourname"><i class="fab fa-github"></i></a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 License</a>.
-          </p>
-          <p>
-            Template adapted from <a href="https://nerfies.github.io">Nerfies</a>.  
-            Replace placeholder links with your own paper, code, and videos.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
+  <footer>
+    © 2025 LeMiCa Project · Built with ❤️ using GitHub Pages
+  </footer>
 </body>
 </html>
