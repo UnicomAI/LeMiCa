@@ -7,7 +7,7 @@
   <meta property="og:title" content="LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation" />
   <meta property="og:description" content="Training-free acceleration framework for diffusion-based video generation" />
   <meta property="og:type" content="website" />
-  <title>LeMiCa: Lexicographic Minimax Path Caching</title>
+  <title>LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation</title>
 
   <!-- Bulma + Fonts -->
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -30,6 +30,7 @@
     .hero .title {
       font-size: 2.2rem;
       font-weight: 800;
+      line-height: 1.3;
     }
     .hero .subtitle {
       font-size: 1.2rem;
@@ -39,7 +40,7 @@
     section {
       padding: 2rem 1rem;
     }
-    img {
+    embed, img {
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       margin: 1.5rem 0;
@@ -58,12 +59,12 @@
   <section class="hero">
     <div class="container">
       <h1 class="title">
-        <span style="color:#39c7c3;">Le</span>xicographic <span style="color:#7f51cf;">Mi</span>nimax <span style="color:#7f51cf;">Ca</span>ching
+        <span style="color:#39c7c3;">Le</span>MiCa: 
+        <span style="color:#7f51cf;">Lexicographic Minimax Path Caching</span> for 
+        <span style="color:#7f51cf;">Efficient Diffusion-Based Video Generation</span>
       </h1>
-      <h2 class="subtitle">
-        Efficient Diffusion-Based Video Generation
-      </h2>
-      <p>Author Names · Institution (2025)</p>
+
+      <p style="margin-top:0.8rem;">Author Names · Institution (2025)</p>
 
       <div class="buttons is-centered" style="margin-top:1rem;">
         <a class="button is-light is-rounded" href="#">Paper</a>
@@ -91,10 +92,10 @@
         for accelerating diffusion-based video generation.
       </p>
 
-      <!-- Placeholder for future image or figure -->
+      <!-- Image (PDF Preview) -->
       <div class="content has-text-centered">
-        <img src="./imgs/1_overview.pdf" alt="LeMiCa illustration" style="max-width:90%;">
-        <p style="font-size:0.85em; color:#666;">Figure: Placeholder for visual overview of LeMiCa (replace with your own figure).</p>
+        <embed src="./imgs/1_overview.pdf" type="application/pdf" width="90%" height="500px" />
+        <p style="font-size:0.85em; color:#666;">Figure: Overview of the LeMiCa framework.</p>
       </div>
     </div>
   </section>
