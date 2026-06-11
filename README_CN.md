@@ -1,4 +1,4 @@
-<span><a href="./README.md">📚English </a> | 📚中文阅读 &nbsp;  | &nbsp; <a href="https://mp.weixin.qq.com/s/o6MMOzbmGBRpB_a_9U8JMw?">机器之心</a> 
+<span><a href="./README.md">📚English </a> | 📚中文阅读 &nbsp;  | &nbsp; <a href="https://mp.weixin.qq.com/s/o6MMOzbmGBRpB_a_9U8JMw?">机器之心</a> &nbsp;  | &nbsp; <a href="https://mp.weixin.qq.com/s/X9ql9U3-OijymvUQNaOBQw">百度文心</a> 
 </span>
 
 <div align="center">
