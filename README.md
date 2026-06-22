@@ -83,9 +83,10 @@
 
 
 ## 🔥 Latest News
-- [2026/04/16] ✨ Support [**ERNIE-Image**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4ErnieImage) text-to-image acceleration with LeMiCa.
-- [2026/01/29] 🔥 Our latest work "MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference" is accepted by ICLR 2026! Codes are available at [**MeanCache**](https://github.com/UnicomAI/MeanCache)! MeanCache achieves 4.12×, 4.56×, and 3.59× acceleration on FLUX.1, Qwen-Image, and HunyuanVideo, while consistently outperforming state-of-the-art caching baselines in generation quality. For more details, please refer to our latest research paper. 
-- [2026/01/20] 🔥 Added support for FLUX.1-dev and FLUX.2-Klein in [**LeMiCa4FLUX**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4FLUX)
+- [2026/06/22] 🔥 Our latest work "OTCache: Optimal Transport for Geometry-Aware Caching in Diffusion Models" is accepted by ECCV 2026!
+- [2026/04/16] 🚀 Support [**ERNIE-Image**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4ErnieImage) text-to-image acceleration with LeMiCa.
+- [2026/01/29] ✨ Our latest work "MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference" is accepted by ICLR 2026! Codes are available at [**MeanCache**](https://github.com/UnicomAI/MeanCache)! MeanCache achieves 4.12×, 4.56×, and 3.59× acceleration on FLUX.1, Qwen-Image, and HunyuanVideo, while consistently outperforming state-of-the-art caching baselines in generation quality. For more details, please refer to our latest research paper. 
+- [2026/01/20] ✨ Added support for FLUX.1-dev and FLUX.2-Klein in [**LeMiCa4FLUX**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4FLUX)
 - [2025/12/15] ✨ [**ComfyUI-LeMiCa**](https://github.com/UnicomAI/LeMiCa/tree/main/ComfyUI-LeMiCa) has been seamlessly integrated into [**ComfyUI**](https://github.com/comfyanonymous/ComfyUI) and is fully compatible with ComfyUI’s native nodes.
 - [2025/12/08] ✨ Support [**HunyuanVideo-1.5**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4HunyuanVideo1.5) for both T2V and I2V.
 - [2025/12/02] ✨ Support [**Z-Image**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4Z-Image) and [**FLUX.2**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4FLUX).

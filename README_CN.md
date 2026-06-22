@@ -80,10 +80,11 @@
 
 
 ## 🔥 最近更新
-- [2026/04/16] ✨ 支持 [**ERNIE-Image**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4ErnieImage) 文生图推理加速。
-- [2026/01/29] 🔥 我们最新的工作"MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference" 已经被ICLR 2026接收! 代码及详情见：[**MeanCache**](https://github.com/UnicomAI/MeanCache)! MeanCache 在Flux.1、Qwen-Image和HunYuanVideo上分别实现了4.12倍、4.56倍和3.59倍加速比，同时保持了几乎无损的生成质量. 请参考我们的主页与论文获取更多细节. 
-- [2025/01/20] 🔥 补充FLUX.1-dev和FLUX.2-klein的支持 [**LeMiCa4FLUX**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4FLUX)
-- [2025/12/15] 🔥 [**ComfyUI-LeMiCa**](https://github.com/UnicomAI/LeMiCa/tree/main/ComfyUI-LeMiCa) 已无缝集成至 [**ComfyUI**](https://github.com/comfyanonymous/ComfyUI)，欢迎体验。
+- [2026/06/22] 🔥 我们最新的工作"OTCache: Optimal Transport for Geometry-Aware Caching in Diffusion Models" 已经被ECCV 2026接收!
+- [2026/04/16] 🚀 支持 [**ERNIE-Image**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4ErnieImage) 文生图推理加速。
+- [2026/01/29] ✨ 我们最新的工作"MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference" 已经被ICLR 2026接收! 代码及详情见：[**MeanCache**](https://github.com/UnicomAI/MeanCache)! MeanCache 在Flux.1、Qwen-Image和HunYuanVideo上分别实现了4.12倍、4.56倍和3.59倍加速比，同时保持了几乎无损的生成质量. 请参考我们的主页与论文获取更多细节. 
+- [2025/01/20] ✨ 补充FLUX.1-dev和FLUX.2-klein的支持 [**LeMiCa4FLUX**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4FLUX)
+- [2025/12/15] ✨ [**ComfyUI-LeMiCa**](https://github.com/UnicomAI/LeMiCa/tree/main/ComfyUI-LeMiCa) 已无缝集成至 [**ComfyUI**](https://github.com/comfyanonymous/ComfyUI)，欢迎体验。
 - [2025/12/08] ✨ 支持 [**HunyuanVideo1.5**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4HunyuanVideo1.5) 文生视频和图生视频。
 - [2025/12/02] ✨ 支持 [**Z-Image**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4Z-Image) 和 [**FLUX.2**](https://github.com/UnicomAI/LeMiCa/tree/main/LeMiCa4FLUX2) 推理加速
 - [2025/11/14] ⭐ 我们开源了 [**Awesome-Acceleration-GenAI**](https://github.com/joelulu/Awesome-Acceleration-GenAI)，收集了最新生成加速技术，欢迎查看！
